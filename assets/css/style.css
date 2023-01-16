@@ -22,7 +22,7 @@ body{
 .img{
     height: 200px;
     width: 150px;
-    float: left;
+    float: right;
     margin-top: -220px;
 }
 h1{
@@ -31,7 +31,8 @@ h1{
     color: #fff;
     font-weight: bold;
     letter-spacing: 1px;
-    padding-left: 200px;
+    padding: 0 !important; 
+    padding: 0 !important;
 }
 /*seccion 2*/
 h2{
@@ -151,43 +152,6 @@ h2{
 .gallery > img:nth-child(5), 
 .gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
 
-/*.card{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-}
-.card div{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    transition: 1s;
-}
-img{
-    width: 300px;
-    height: 300px;
-    text-align: center;
-}
-.card .front{
-    transform: perspective(300px) rotateY(0deg);
-}
-.card .back{
-    transform: perspective(300px) rotateY(180deg);
-}
-.card:hover .front{
-    transform: perspective(300px) rotateY(180deg);
-}
-.card:hover .back{
-    transform: perspective(300px) rotateY(360deg);
-}*/
 p{
     text-align: center;
     color: #fff;
@@ -201,45 +165,6 @@ p{
     height: 200px;
 }
 
-/*Gallery*/
-/*.gallery {
-    --s: 200px; /* control the size */
-    /*--r: 45px;  /* control the triangular shape */
-    
-    /*display: grid;
-    gap: 6px;
-    grid: auto-flow var(--s)/repeat(2,var(--s));
-    cursor: pointer;
-  }
-  .gallery > img {
-    object-fit: cover;
-    transition: .5s;
-  }
-  .gallery > img:is(:nth-child(1),:nth-child(4)) {
-    width: 100%;
-    height: calc(100% + var(--r));
-  }
-  .gallery > img:is(:nth-child(2),:nth-child(3)) {
-    height: 100%;
-    width: calc(100% + var(--r));
-  }
-  .gallery > img:nth-child(1) {
-    clip-path: polygon(0 0, 100% 0, calc(100% - var(--r)) calc(50% - var(--r)/2),100% calc(100% - var(--r)),50% 100%,0 calc(100% - var(--r)))
-  }
-  .gallery > img:nth-child(2) {
-    place-self: end;
-    clip-path: polygon(var(--r) 0,100% 0,100% 100%,calc(50% + var(--r)/2) calc(100% - var(--r)),var(--r) 100%,0 50%)
-  }
-  .gallery > img:nth-child(3) {
-    clip-path: polygon(0 0,calc(50% - var(--r)/2) var(--r),calc(100% - var(--r)) 0,100% 50%,calc(100% - var(--r)) 100%,0 100%)
-  }
-  .gallery > img:nth-child(4) {
-    place-self: end;
-    clip-path: polygon(0 var(--r), 50% 0,100% var(--r),100% 100%,0 100%,var(--r) calc(50% + var(--r)/2))
-  }
-  .gallery:hover {
-    --r: 0px;
-  }*/
 /*Boton Mapa*/
   .btn{
     width: 150px;
@@ -474,47 +399,8 @@ footer{
     .gall{
       margin: -230px auto;
     }
-
-    /*.gallery {
-        --s: 150px; /* control the size */
-        /*--r: 45px;  /* control the triangular shape */
-        
-        /*display: grid;
-        gap: 6px;
-        grid: auto-flow var(--s)/repeat(2,var(--s));
-        cursor: pointer;
-      }
-      .gallery > img {
-        object-fit: cover;
-        transition: .5s;
-      }
-      .gallery > img:is(:nth-child(1),:nth-child(4)) {
-        width: 100%;
-        height: calc(100% + var(--r));
-      }
-      .gallery > img:is(:nth-child(2),:nth-child(3)) {
-        height: 100%;
-        width: calc(100% + var(--r));
-      }
-      .gallery > img:nth-child(1) {
-        clip-path: polygon(0 0, 100% 0, calc(100% - var(--r)) calc(50% - var(--r)/2),100% calc(100% - var(--r)),50% 100%,0 calc(100% - var(--r)))
-      }
-      .gallery > img:nth-child(2) {
-        place-self: end;
-        clip-path: polygon(var(--r) 0,100% 0,100% 100%,calc(50% + var(--r)/2) calc(100% - var(--r)),var(--r) 100%,0 50%)
-      }
-      .gallery > img:nth-child(3) {
-        clip-path: polygon(0 0,calc(50% - var(--r)/2) var(--r),calc(100% - var(--r)) 0,100% 50%,calc(100% - var(--r)) 100%,0 100%)
-      }
-      .gallery > img:nth-child(4) {
-        place-self: end;
-        clip-path: polygon(0 var(--r), 50% 0,100% var(--r),100% 100%,0 100%,var(--r) calc(50% + var(--r)/2))
-      }
-      .gallery:hover {
-        --r: 0px;
-      }*/
    
-      .img3{
+    .img3{
         position: relative;
         display: block;
         width: 150px;
