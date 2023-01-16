@@ -22,21 +22,23 @@ body{
 .img{
     height: 200px;
     width: 150px;
-    float: right;
+    float: left;
     margin-top: -220px;
 }
 h1{
     font-size: 60px;
     height: 220px;
-    color: white;font-weight: bold;
+    color: #fff;
+    font-weight: bold;
     letter-spacing: 1px;
+    padding-left: 200px;
 }
 /*seccion 2*/
 h2{
     font-size: 40px;
     text-align: center;
     margin-top: 10px;
-    color: white;
+    color: #fff;
     font-weight: 500;
 }
 .img2{
@@ -48,70 +50,147 @@ h2{
 }
 /* hover*/
 .efecto{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.efecto .cara{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.efecto .cara span{
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+}
+.efecto .cara1 span{
+  background-image: url(../images/sebas.jpg);
+  background-size: cover;
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  transform-origin: top;
+}
+.efecto:hover .cara1 span{
+  transform: rotateX(90deg) translateY(-50%);
+}
+.efecto .cara2 span{
+  background-image: url(../images/siete.jpg);
+  background-size: cover;
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  transform-origin: bottom;
+  transform: rotateX(90deg) translateY(50%);
+}
+.efecto:hover .cara2 span{
+  transform: rotateX(0deg) translateY(0);
+}
+.efecto .cara span:nth-child(1){
+  background-position-x: 0;
+  transition-delay: 0s;
+}
+.efecto .cara span:nth-child(2){
+  background-position-x: -100px;
+  transition-delay: .1s;
+}
+.efecto .cara span:nth-child(3){
+  background-position-x: -200px;
+  transition-delay: .2s;
+}
+.efecto .cara span:nth-child(4){
+  background-position-x: -300px;
+  transition-delay: .3s;
+}
+
+/*Gallery*/
+.gallery {
+  --s: 130px; /* control the size */
+  --g: 10px;  /* control the gap */
+  display: grid;
+  margin: calc(var(--s) + var(--g));
+  min-height: 100vh;
+  place-content: center;
+
+}
+.gall{
+  margin: -90px auto;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 0.866;
+  object-fit: cover;
+  clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
+  transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .2s linear;
+}
+.gallery > img:hover {
+  filter: grayscale(0);
+  z-index: 1;
+  --_t: 1.2;
+}
+
+.gallery > img:nth-child(1) {--_x: calc(-100% - var(--g))}
+.gallery > img:nth-child(7) {--_x: calc( 100% + var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
+.gallery > img:nth-child(4),
+.gallery > img:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
+.gallery > img:nth-child(3),
+.gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
+.gallery > img:nth-child(5), 
+.gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
+
+/*.card{
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
 }
-.efecto .cara{
-    display: flex;
+.card div{
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: 1s;
 }
-.efecto .cara span{
-    width: 100%;
-    height: 100%;
-    transition: .5s;
-}
-.efecto .cara1 span{
-    background-image: url(../images/sebas.jpg);
-    background-size: cover;
-    background-size: 400px 400px;
-    background-repeat: no-repeat;
-    transform-origin: top;
-}
-.efecto:hover .cara1 span{
-    transform: rotateX(90deg) translateY(-50%);
-}
-.efecto .cara2 span{
-    background-image: url(../images/siete.jpg);
-    background-size: cover;
-    background-size: 400px 400px;
-    background-repeat: no-repeat;
-    transform-origin: bottom;
-    transform: rotateX(90deg) translateY(50%);
-}
-.efecto:hover .cara2 span{
-    transform: rotateX(0deg) translateY(0);
-}
-.efecto .cara span:nth-child(1){
-    background-position-x: 0;
-    transition-delay: 0s;
-}
-.efecto .cara span:nth-child(2){
-    background-position-x: -100px;
-    transition-delay: .1s;
-}
-.efecto .cara span:nth-child(3){
-    background-position-x: -200px;
-    transition-delay: .2s;
-}
-.efecto .cara span:nth-child(4){
-    background-position-x: -300px;
-    transition-delay: .3s;
-}
-p{
-    margin: 10px;
-    font-size: 14px;
-    color: #fff;
+img{
+    width: 300px;
+    height: 300px;
     text-align: center;
+}
+.card .front{
+    transform: perspective(300px) rotateY(0deg);
+}
+.card .back{
+    transform: perspective(300px) rotateY(180deg);
+}
+.card:hover .front{
+    transform: perspective(300px) rotateY(180deg);
+}
+.card:hover .back{
+    transform: perspective(300px) rotateY(360deg);
+}*/
+p{
+    text-align: center;
+    color: #fff;
 }
 
 /*Parte 2*/
@@ -123,46 +202,45 @@ p{
 }
 
 /*Gallery*/
-.gallery {
-    --s: 130px; /* control the size */
-    --g: 10px;  /* control the gap */
-    display: grid;
-    margin: calc(var(--s) + var(--g));
-    min-height: 100vh;
-    place-content: center;
-
-  }
-  .gall{
-    margin: -90px auto;
+/*.gallery {
+    --s: 200px; /* control the size */
+    /*--r: 45px;  /* control the triangular shape */
+    
+    /*display: grid;
+    gap: 6px;
+    grid: auto-flow var(--s)/repeat(2,var(--s));
+    cursor: pointer;
   }
   .gallery > img {
-    grid-area: 1/1;
-    width: var(--s);
-    aspect-ratio: 0.866;
     object-fit: cover;
-    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
-    transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
-    cursor: pointer;
-    filter: grayscale(80%);
-    transition: .2s linear;
+    transition: .5s;
   }
-  .gallery > img:hover {
-    filter: grayscale(0);
-    z-index: 1;
-    --_t: 1.2;
+  .gallery > img:is(:nth-child(1),:nth-child(4)) {
+    width: 100%;
+    height: calc(100% + var(--r));
   }
-  
-  .gallery > img:nth-child(1) {--_x: calc(-100% - var(--g))}
-  .gallery > img:nth-child(7) {--_x: calc( 100% + var(--g))}
-  .gallery > img:nth-child(3),
-  .gallery > img:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
-  .gallery > img:nth-child(4),
-  .gallery > img:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
-  .gallery > img:nth-child(3),
-  .gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
-  .gallery > img:nth-child(5), 
-  .gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
-
+  .gallery > img:is(:nth-child(2),:nth-child(3)) {
+    height: 100%;
+    width: calc(100% + var(--r));
+  }
+  .gallery > img:nth-child(1) {
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--r)) calc(50% - var(--r)/2),100% calc(100% - var(--r)),50% 100%,0 calc(100% - var(--r)))
+  }
+  .gallery > img:nth-child(2) {
+    place-self: end;
+    clip-path: polygon(var(--r) 0,100% 0,100% 100%,calc(50% + var(--r)/2) calc(100% - var(--r)),var(--r) 100%,0 50%)
+  }
+  .gallery > img:nth-child(3) {
+    clip-path: polygon(0 0,calc(50% - var(--r)/2) var(--r),calc(100% - var(--r)) 0,100% 50%,calc(100% - var(--r)) 100%,0 100%)
+  }
+  .gallery > img:nth-child(4) {
+    place-self: end;
+    clip-path: polygon(0 var(--r), 50% 0,100% var(--r),100% 100%,0 100%,var(--r) calc(50% + var(--r)/2))
+  }
+  .gallery:hover {
+    --r: 0px;
+  }*/
+/*Boton Mapa*/
   .btn{
     width: 150px;
     height: 40px;
@@ -178,11 +256,14 @@ p{
 }
 .btn:hover{
     cursor: pointer;
-    border-color: #000;
+    border-color: #fff;
     translate: 1px;
     font-size: 20px;
-    color: #000;
+    color: #fff;
    
+}
+.whats{
+    height: 30px;
 }
 
 /*Parte 3*/
@@ -213,10 +294,10 @@ p{
 }
 .confirm:hover{
     cursor: pointer;
-    border-color: #000;
+    border-color: #fff;
     translate: 1px;
     font-size: 22px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -231,10 +312,10 @@ a{
 } 
 a:hover{
     cursor: pointer;
-    border-color: #000;
+    border-color: #fff;
     translate: 1px;
     font-size: 20px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 .img4{
@@ -249,20 +330,19 @@ a:hover{
 .timer{
     display: inline-block;
     padding: 10px;
-    color: #000;
+    color: #fff;
     font-size: 20px;
     position: relative;
     bottom: 30px;
     text-align: center;
     height: 100px;
-    margin-bottom: 15px;
   }
   .countdown div{
     float: left;
     padding: 10px;
     color: #fff;
     font-weight: 500; 
-    height: 100px;  
+    height: 100px; 
   }
   .countdown p{
       width: auto;
@@ -274,7 +354,7 @@ a:hover{
 footer{
     width: 100%;
     height: 55px;
-    margin: auto auto 1px;
+    margin: auto auto 5px;
     color: #fff;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
@@ -283,7 +363,7 @@ footer{
 .footer{
     text-align: center;
     font-weight: 1000;
-    line-height: 18px;
+    line-height: 25px;
     letter-spacing: 3px;
     font-size: 18px;
 }
@@ -293,7 +373,6 @@ footer{
     font-weight: 500;
     line-height: 2px;
     letter-spacing: 3px;
-    padding-bottom: 10px;
 }
 
 .mensaje-final{
@@ -316,82 +395,125 @@ footer{
     h1{
         font-size: 40px;
         height: 220px;
-        color: white;
+        color: #fff;
         font-weight: bold;
+        padding-left: 150px;
+        padding-top: 30px;
     }
+
     .efecto{
-        position: relative;
-        width: 345px;
-        height: 345px;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
+      position: relative;
+      width: 345px;
+      height: 345px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+  }
+  .efecto .cara{
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  .efecto .cara span{
+      width: 100%;
+      height: 100%;
+      transition: .5s;
+  }
+  .efecto .cara1 span{
+      background-image: url(../images/sebas.jpg);
+      background-size: cover;
+      background-size: 345px 345px;
+      background-repeat: no-repeat;
+      transform-origin: top;
+  }
+  .efecto:hover .cara1 span{
+      transform: rotateX(90deg) translateY(-50%);
+  }
+  .efecto .cara2 span{
+      background-image: url(../images/siete.jpg);
+      background-size: cover;
+      background-size: 340px 340px;
+      background-repeat: no-repeat;
+      transform-origin: bottom;
+      transform: rotateX(90deg) translateY(50%);
+  }
+  .efecto:hover .cara2 span{
+      transform: rotateX(0deg) translateY(0);
+  }
+  .efecto .cara span:nth-child(1){
+      background-position-x: 0;
+      transition-delay: 0s;
+  }
+  .efecto .cara span:nth-child(2){
+      background-position-x: -85px;
+      transition-delay: .1s;
+  }
+  .efecto .cara span:nth-child(3){
+      background-position-x: -170px;
+      transition-delay: .2s;
+  }
+  .efecto .cara span:nth-child(4){
+      background-position-x: -255px;
+      transition-delay: .3s;
+  }
+ 
+  .gallery {
+      --s: 100px; /* control the size */
+      --g: 10px;  /* control the gap */
+      display: grid;
+      margin: calc(var(--s) + var(--g));
+      min-height: 100vh;
+      place-content: center;
+  
     }
-    .efecto .cara{
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .gall{
+      margin: -230px auto;
     }
-    .efecto .cara span{
-        width: 100%;
-        height: 100%;
+
+    /*.gallery {
+        --s: 150px; /* control the size */
+        /*--r: 45px;  /* control the triangular shape */
+        
+        /*display: grid;
+        gap: 6px;
+        grid: auto-flow var(--s)/repeat(2,var(--s));
+        cursor: pointer;
+      }
+      .gallery > img {
+        object-fit: cover;
         transition: .5s;
-    }
-    .efecto .cara1 span{
-        background-image: url(../images/sebas.jpg);
-        background-size: cover;
-        background-size: 345px 345px;
-        background-repeat: no-repeat;
-        transform-origin: top;
-    }
-    .efecto:hover .cara1 span{
-        transform: rotateX(90deg) translateY(-50%);
-    }
-    .efecto .cara2 span{
-        background-image: url(../images/siete.jpg);
-        background-size: cover;
-        background-size: 340px 340px;
-        background-repeat: no-repeat;
-        transform-origin: bottom;
-        transform: rotateX(90deg) translateY(50%);
-    }
-    .efecto:hover .cara2 span{
-        transform: rotateX(0deg) translateY(0);
-    }
-    .efecto .cara span:nth-child(1){
-        background-position-x: 0;
-        transition-delay: 0s;
-    }
-    .efecto .cara span:nth-child(2){
-        background-position-x: -85px;
-        transition-delay: .1s;
-    }
-    .efecto .cara span:nth-child(3){
-        background-position-x: -170px;
-        transition-delay: .2s;
-    }
-    .efecto .cara span:nth-child(4){
-        background-position-x: -255px;
-        transition-delay: .3s;
-    }
+      }
+      .gallery > img:is(:nth-child(1),:nth-child(4)) {
+        width: 100%;
+        height: calc(100% + var(--r));
+      }
+      .gallery > img:is(:nth-child(2),:nth-child(3)) {
+        height: 100%;
+        width: calc(100% + var(--r));
+      }
+      .gallery > img:nth-child(1) {
+        clip-path: polygon(0 0, 100% 0, calc(100% - var(--r)) calc(50% - var(--r)/2),100% calc(100% - var(--r)),50% 100%,0 calc(100% - var(--r)))
+      }
+      .gallery > img:nth-child(2) {
+        place-self: end;
+        clip-path: polygon(var(--r) 0,100% 0,100% 100%,calc(50% + var(--r)/2) calc(100% - var(--r)),var(--r) 100%,0 50%)
+      }
+      .gallery > img:nth-child(3) {
+        clip-path: polygon(0 0,calc(50% - var(--r)/2) var(--r),calc(100% - var(--r)) 0,100% 50%,calc(100% - var(--r)) 100%,0 100%)
+      }
+      .gallery > img:nth-child(4) {
+        place-self: end;
+        clip-path: polygon(0 var(--r), 50% 0,100% var(--r),100% 100%,0 100%,var(--r) calc(50% + var(--r)/2))
+      }
+      .gallery:hover {
+        --r: 0px;
+      }*/
    
-    .gallery {
-        --s: 100px; /* control the size */
-        --g: 10px;  /* control the gap */
-        display: grid;
-        margin: calc(var(--s) + var(--g));
-        min-height: 100vh;
-        place-content: center;
-    
-      }
-      .gall{
-        margin: -230px auto;
-      }
       .img3{
         position: relative;
         display: block;
@@ -415,16 +537,16 @@ footer{
         padding: 0 auto;
         text-align: center;
     }
+    .whats{
+        height: 30px;
+    }
     .img4{
         width: 90px;
         margin-left: 160px;
     }
-    .img5{
-        position: relative;
-        display: block;
-        width: 150px;
-        height: 200px;
-        margin: auto;
+    
+    .faltan{
+      margin: 30px;
     }
     .timer{
         display: inline-block;
